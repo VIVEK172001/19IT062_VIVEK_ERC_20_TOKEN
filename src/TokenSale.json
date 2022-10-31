@@ -6057,10 +6057,16 @@
       "links": {},
       "address": "0x231F0EB51cD3B13Cc9132e7668B22E7860ABEFdb",
       "transactionHash": "0xd45a30de2112198ba3cd39989e28f7f93d4c55b254e3295ed72f2028c57f3c82"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0x7187f0Af0d337B87396542C68eC017B8C3a7ac08",
+      "transactionHash": "0x5f598cd682bfaf70036ada57c752db51cca864bfb2e24e2bfc244b8da46c0ad5"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-10-31T07:38:50.692Z",
+  "updatedAt": "2022-10-31T17:15:59.066Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
