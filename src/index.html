@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19IT062 | Vivek Mandani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+          fontSize: {
+            xxs: ".75rem",
+            xs: ".75rem",
+            sm: ".875rem",
+            tiny: ".875rem",
+            base: "1rem",
+            lg: "1.125rem",
+            xl: "1.25rem",
+            "2xl": "1.5rem",
+            "3xl": "1.875rem",
+            "4xl": "2.25rem",
+            "5xl": "3rem",
+            "6xl": "4rem",
+            "7xl": "5rem",
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-slate-900 text-white sm:h-screen xs:h-full">
+    <div
+      class="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none"
+    >
+      <div class="w-[108rem] flex-none flex justify-end">
+        <picture>
+          <source
+            srcset="
+              https://tailwindcss.com/_next/static/media/docs@30.beeb08605f12f699c5abc3814763b65e.avif
+            "
+            type="image/avif"
+          />
+          <img
+            src="https://tailwindcss.com/_next/static/media/docs@30.beeb08605f12f699c5abc3814763b65e.avif"
+            alt=""
+            class="w-[71.75rem] flex-none max-w-none dark:hidden"
+          />
+        </picture>
+        <picture>
+          <source
+            srcset="
+              https://tailwindcss.com/_next/static/media/docs-dark@30.77f062b5fd90f0d2cd4752cd9a8649c8.avif
+            "
+            type="image/avif"
+          />
+          <img
+            src="https://tailwindcss.com/_next/static/media/docs-dark@30.77f062b5fd90f0d2cd4752cd9a8649c8.avif"
+            alt=""
+            class="w-[90rem] flex-none max-w-none hidden dark:block"
+          />
+        </picture>
+      </div>
+    </div>
+    <div
+      class="container xs:mt-12 sm:h-full flex flex-col justify-center mx-auto md:py-12 pt-12 px-6"
+    >
+      <h1 class="text-4xl xs:mt-12 font-bold text-center">
+        Vivek Mandani 19IT062 Token
+      </h1>
+      <div id="loader" class="flex items-center justify-center space-x-2">
+        <svg
+          class="animate-spin my-10 h-8 w-8 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
+      </div>
+      <div id="content" class="text-center my-10 w-full">
+        <p class="text-lg">
+          Introducing
+          <span class="font-bold italic">"Vivek_19IT062" (VM62)!</span> Token
+          price is <span class="font-bold" id="token-price">0.001</span> Ether.
+          You currently have
+          <span class="font-bold" id="balance">45</span>&nbsp; VM62.
+        </p>
+        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
+          <div class="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
+            <form
+              onsubmit="App.buyTokens(); return false;"
+              id="form"
+              class="mb-0 space-y-6"
+              method="get"
+            >
+              <div>
+                <label
+                  for="numberOfToken"
+                  class="block mb-4 text-left text-lg font-medium text-gray-700"
+                  >Buy Tokens</label
+                >
+                <div class="flex flex-row gap-x-2">
+                  <input
+                    name="numberOfToken"
+                    id="numberOfToken"
+                    value="1"
+                    min="1"
+                    max="200000"
+                    pattern="[0-9]"
+                    type="number"
+                    required
+                    class="w-full text-black border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500"
+                  />
+                  <button
+                    type="submit"
+                    class="w-auto py-2 px-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-white text-sm font-semibold rounded-md shadow focus:outline-none cursor-pointer"
+                  >
+                    Buy
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="mt-12 flex justify-between mb-1">
+            <span class="text-base font-medium text-blue-700 dark:text-white"
+              >Tokens Sold</span
+            >
+            <span class="text-sm font-medium text-blue-700 dark:text-white"
+              ><span id="token-sold" class="slashed-zero">00</span
+              >&nbsp;/&nbsp;<span id="total-supply" class="slashed-zero"
+                >750000</span
+              ></span
+            >
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div
+              id="progress-bar"
+              class="bg-blue-600 h-2.5 rounded-full"
+              style="width: 10%"
+            ></div>
+          </div>
+        </div>
+        <!-- <div class="my-10 w-5/6 mx-auto bg-gray-700" style="height: 3px" /> -->
+      </div>
+    </div>
+    <div
+      class="flex md:flex-row flex-col-reverse items-center md:absolute md:z-20 md:top-5 md:right-5"
+    >
+      <p
+        id="accountAddress"
+        class="text-gray-400 my-4 md:my-0 md:text-base text-xxs"
+      >
+        0x0
+      </p>
+      <img
+        id="avatar"
+        class="p-2 ml-4 border rounded-full cursor-pointer hover:bg-slate-800"
+        width="50px"
+        height="50px"
+        src="https://avatars.dicebear.com/api/bottts/0x0.svg"
+        alt="0x3FeC7B46CB1a224DB1f4319ce142B6B6350Fe95A"
+      />
+    </div>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
